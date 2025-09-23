@@ -10,7 +10,7 @@ int compare(const void *a, const void *b) {
 
 int main(){
     
-    FILE *fp = fopen("Day1_part1_input.txt","r");
+    FILE *fp = fopen("input.txt","r");
     if(fp == NULL){
         printf("input.txt file cannot be opened\n");
         return 1;

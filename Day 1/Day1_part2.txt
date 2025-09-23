@@ -1,0 +1,22 @@
+Solution to Day1 part2
+
+Input: A file containing 2 lists of positive integers which are location ID's.
+
+Output: Similarity Score
+
+Steps:
+
+1. Define necessary libraries.
+2. Read the input file.
+3. Split the lists into 2 arrays - list1 and list2.
+4. Sort list1 and list2 independently using qsort (defined in stdlib.h).
+   Add a compare function to arrange list items in ascending order.
+5. Set similarity_score = 0.
+6. For each element of list 1, calculate the count of occurences of that element in list 2.
+   Add this value to similarity_score.
+7. I have used already_seen_list1_num to store the list1 elements whose occurence count was already calculated previously. 
+   This way, for each already_seen_list1_num, we don't need to iterate through list 2 again to find the count. 
+   Add the value of count * already_seen_list1_num to similarity score.
+8. As the elements in list2 are sorted, I have used list2_start_index to prevent searching the entire list for occurences. 
+   When there is a mismatch in comparison, the next search in list2 will begin from the mismatched element index and not from the start of list2.
+7. The final value stored in similarity_score is the required output.
