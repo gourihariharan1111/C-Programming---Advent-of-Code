@@ -1,0 +1,23 @@
+Solution of Day2 part2
+
+Input: A file containing a 2D array of values, each row holding a set of report data.
+
+Output: Count of the number of safe reports even if one level is removed. 
+
+Steps:
+
+1. Define necessary libraries.
+2. Read each row in the input file and store the values into report array.
+3. Set count = 0, which stores the count of safe reports.
+4. Call isReportSafe() on each report to get the count. 
+    isReportSafe() returns 0 if one of the following conditions occur:
+    a. if the absolute difference between any adjacent array elements is 0 or > 3.
+    b. if the difference between adjacent any array elements is not always increasing.
+    c. if the difference between adjacent any array elements is not always decreasing.
+5. if isReportSafe() returns 1, increment the value of count.
+6. else check if isReportSafeWithOneLevelDampened, 
+this functions calls isReportSafe on report after removing one level at a time.
+tempReport is used to store the report after removing one level.
+7. Print count, which stores the number of safe reports. 
+
+
